@@ -1,0 +1,5 @@
+# dsh-granular-settings: per-workspace and per-session settings panels that
+# other plugins contribute to. Consumers inject 'granularSettings'.
+- insert:
+    - id: granular-settings
+      name: dsh-granular-settings
