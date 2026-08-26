@@ -14,6 +14,10 @@ Every registration is namespaced by the owning plugin's package name, so
 `enabled` from `dsh-foo` and `enabled` from `dsh-bar` are different settings
 in different namespaces. Generic keys are safe; collisions cannot happen.
 
+Not sure how to wire your own plugin? [dsh-bouncing-squares-example](https://github.com/joao-paulo-santos/dsh-bouncing-squares-example)
+is a small working example, built exactly for that: three bouncing squares,
+one per scope, driven entirely by registered settings. Copy it and go.
+
 ## Three scopes, one page
 
 | scope | value lives |
@@ -142,4 +146,4 @@ curl -N 'http://127.0.0.1:3080/relay/events?topics=granular-settings'
 
 ## Plugins dependent on this
 
-- [dsh-bouncing-squares-example](https://github.com/joao-paulo-santos/dsh-bouncing-squares-example), the tutorial example: three bouncing squares, one per scope, exercising eight control types
+- [dsh-bouncing-squares-example](https://github.com/joao-paulo-santos/dsh-bouncing-squares-example), the tutorial example: three bouncing squares, one per scope, exercising seven control types
