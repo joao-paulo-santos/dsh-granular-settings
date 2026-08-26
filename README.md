@@ -20,6 +20,8 @@ one per scope, driven entirely by registered settings. Copy it and go.
 
 ## Three scopes, one page
 
+<img width="959" height="763" alt="image" src="https://github.com/user-attachments/assets/af43d3b2-ba5f-4d21-9291-4c420c5fcab6" />
+
 | scope | value lives |
 |---|---|
 | `session` | one value per session, in `<workspace>/.dsh/settings/sessions/<sid>.json` |
