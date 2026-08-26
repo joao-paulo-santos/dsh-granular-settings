@@ -108,7 +108,7 @@ gs.useKeybind('my-plugin', 'session', 'hello', () => sayHello())
 ```
 
 `useSetting` derives the session context itself, subscribes to changes
-(doorbell, reconnect, window focus, set echo), serves the registration
+(doorbell, reconnect, window focus, write completion), serves the registration
 default while a context's truth loads, and writes optimistically through
 the host. With no session open, session and workspace values read as
 `undefined` and their writers are no-ops; global values keep working.
