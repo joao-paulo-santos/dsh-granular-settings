@@ -6,7 +6,7 @@ plugin: install it into a profile alongside your own plugins.
 **Settings that other plugins contribute.** Plugins need knobs at more than
 one granularity: a model choice for this session, a build flag for the whole
 workspace, an accent color for the entire install. This plugin is the shared
-platform for all of them. One registration API, nine control types, three
+platform for all of them. One registration API, eight control types, three
 scopes, and one Granular Settings page in the settings dialog that renders
 everything, grouped one box per plugin.
 
@@ -85,7 +85,6 @@ Control types and their metadata:
 | `slider` | number | required `min`, `max`, `step` |
 | `enum` | one option value | required `options` or a provider function |
 | `multiselect` | array of option values | required `options` or a provider function |
-| `keybind` | combo string like `Ctrl+Alt+K` | |
 | `path` | absolute directory string | |
 
 For `enum` and `multiselect`, `options` may instead be a zero-argument
@@ -102,9 +101,6 @@ const gs = ctx.get('granularSettings')
 const [model, setModel] = gs.useSetting('my-plugin', 'session', 'model')
 const [speed, setSpeed] = gs.useSetting('my-plugin', 'workspace', 'speed')
 const [accent, setAccent] = gs.useSetting('my-plugin', 'global', 'accent')   // works sessionless
-
-// keybind settings, combo handling included:
-gs.useKeybind('my-plugin', 'session', 'hello', () => sayHello())
 ```
 
 `useSetting` derives the session context itself, subscribes to changes
