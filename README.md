@@ -140,4 +140,4 @@ curl -N 'http://127.0.0.1:3080/relay/events?topics=granular-settings'
 
 ## Plugins dependent on this
 
-*(none yet, list plugins that register settings or consume the client service here)*
+- [dsh-bouncing-squares-example](https://github.com/joao-paulo-santos/dsh-bouncing-squares-example), the tutorial example: three bouncing squares, one per scope, exercising eight control types
