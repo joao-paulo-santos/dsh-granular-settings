@@ -92,20 +92,26 @@ For `enum` and `multiselect`, `options` may instead be a zero-argument
 function evaluated at describe time, so an option list can track a live
 library without re-registration.
 
-Browser side: read and write values (inject `granularSettingsClient`; no
-fetch, no relay topics, no wire shapes):
+Browser side: one hook, same service name as the host (inject
+`granularSettings`; the browser and host planes never see each other):
 
 ```js
-const gs = ctx.get('granularSettingsClient')
-const cacheKey = sessionId || ''                        // '' is the sessionless context
+const gs = ctx.get('granularSettings')
 
-gs.ensure(cacheKey)                                     // ask for one context's settings
-gs.loaded(cacheKey)                                     // render gate, avoids default flash
-gs.valueOf(cacheKey, 'my-plugin', 'session', 'model')   // value with default fallback
-gs.set(cacheKey, 'my-plugin', 'session', 'model', 'b')  // optimistic write
-const off = gs.onChange(cacheKey, () => refetch())      // doorbell, reconnect, focus, set echo
-gs.release(cacheKey)                                    // unmount drops one want, refcounted
+// inside any component:
+const [model, setModel] = gs.useSetting('my-plugin', 'session', 'model')
+const [speed, setSpeed] = gs.useSetting('my-plugin', 'workspace', 'speed')
+const [accent, setAccent] = gs.useSetting('my-plugin', 'global', 'accent')   // works sessionless
+
+// keybind settings, combo handling included:
+gs.useKeybind('my-plugin', 'session', 'hello', () => sayHello())
 ```
+
+`useSetting` derives the session context itself, subscribes to changes
+(doorbell, reconnect, window focus, set echo), serves the registration
+default while a context's truth loads, and writes optimistically through
+the host. With no session open, session and workspace values read as
+`undefined` and their writers are no-ops; global values keep working.
 
 Whole tabs can be contributed too, when rows are not enough:
 

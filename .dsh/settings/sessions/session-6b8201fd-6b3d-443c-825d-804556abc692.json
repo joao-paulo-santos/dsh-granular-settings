@@ -1,0 +1,10 @@
+{
+  "session-square": {
+    "show-square": false
+  },
+  "bouncing-squares": {
+    "speed": 7,
+    "hello": "Shift+Shift"
+  },
+  "_revision": 5
+}
