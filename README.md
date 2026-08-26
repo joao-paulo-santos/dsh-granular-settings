@@ -142,7 +142,7 @@ curl -N 'http://127.0.0.1:3080/relay/events?topics=granular-settings'
 
 ## Dependencies
 
-- [dsh-event-relay](https://github.com/joao-paulo-santos/dsh-event-relay) carries the change doorbells to every open browser surface
+- [dsh-event-relay](https://github.com/joao-paulo-santos/dsh-event-relay) carries the change doorbells (hard dependency, both halves)
 
 ## Plugins dependent on this
 
