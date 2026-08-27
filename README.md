@@ -148,4 +148,5 @@ curl -N 'http://127.0.0.1:3080/relay/events?topics=granular-settings'
 
 ## Plugins dependent on this
 
+- [dsh-granular-prompt](https://github.com/joao-paulo-santos/dsh-granular-prompt), the prompt-composition manager: registers persona and system-prompt settings and a Prompt tab
 - [dsh-bouncing-squares-example](https://github.com/joao-paulo-santos/dsh-bouncing-squares-example), the tutorial example: three bouncing squares, one per scope, exercising seven control types
