@@ -1,6 +1,6 @@
 {
   "name": "dsh-granular-settings",
-  "version": "0.16.1",
+  "version": "0.17.0",
   "description": "Granular settings platform: one Granular Settings page in the settings dialog with Workspace/Session/Plugin tabs. Three scopes (workspace, session, global) registered by plugins, namespaced storage, doorbell-only push.",
   "type": "module",
   "license": "MIT",
@@ -25,5 +25,8 @@
         "dsh-event-relay"
       ]
     }
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-client-ui-primitives": "*"
   }
 }
